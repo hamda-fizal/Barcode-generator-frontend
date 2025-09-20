@@ -14,4 +14,5 @@ export class HeaderComponent {
   @Output() saveTemplate = new EventEmitter<void>();
   @Output() clearCanvas = new EventEmitter<void>();
   @Output() exportTemplate = new EventEmitter<void>();
+  @Output() importTemplate = new EventEmitter<void>();
 }

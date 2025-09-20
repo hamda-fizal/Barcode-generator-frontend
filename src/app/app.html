@@ -4,7 +4,8 @@
   (templateNameChange)="templateName = $event"
   (saveTemplate)="openSaveDialog()"
   (clearCanvas)="clearCanvas()"
-  (exportTemplate)="exportTemplate()">
+  (exportTemplate)="exportTemplate()"
+    (importTemplate)="openImportDialog()">
 </app-header>
 
 <app-save-template-dialog
@@ -14,6 +15,13 @@
   (cancel)="showSaveDialog = false">
 </app-save-template-dialog>
 
+  
+    <app-import-template-dialog
+     *ngIf="showImportDialog"
+     [jsonPreview]="jsonPreview"
+    (importConfirmed)="handleImportConfirmed($event)"
+    (cancel)="handleImportCancel()"
+  ></app-import-template-dialog>
 
   <div class="main-content">
     <app-widgets-panel
@@ -38,6 +46,7 @@
       (imageUpload)="handleImageUpload($event)"
       (deselectWidget)="deselectWidget()">
     </app-canvas>
+
 
     <app-properties-panel
       [selectedWidget]="selectedWidget"

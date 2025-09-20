@@ -26,7 +26,7 @@ export interface Widget {
   // Image properties
   imageData?: string;
   imageName?: string;
-  
+  imageLabel?: string;
   // Style properties
   fontSize?: string;
   fontWeight?: string;

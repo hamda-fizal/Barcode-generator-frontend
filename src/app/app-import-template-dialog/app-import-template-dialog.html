@@ -1,0 +1,20 @@
+<div class="dialog-backdrop" (click)="close()"></div>
+<div class="dialog">
+  <div class="dialog-header">
+    <h3>📥 Bulk Import Product details</h3>
+    <!-- tooltip -->
+    <button class="close-btn" (click)="close()">✖</button>
+  </div>
+
+  <div class="dialog-body">
+    <button class="btn btn-primary" (click)="downloadSample()">Download Sample .xlsx</button>
+
+    <label for="fileInput" style="margin-top: 1rem;">Select Excel File to Import</label>
+    <input id="fileInput" type="file" accept=".xlsx, .xls" (change)="onFileSelected($event)" />
+  </div>
+
+  <div class="dialog-actions">
+    <button class="btn btn-secondary" (click)="close()">Cancel</button>
+    <button class="btn btn-primary" [disabled]="!selectedFile" (click)="confirmImport()">Import</button>
+  </div>
+</div>

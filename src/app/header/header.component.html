@@ -1,4 +1,4 @@
-<div class="header">
+<!-- <div class="header">
   <h1>🎨 Template Creator - Angular</h1>
   <div class="controls">
     <button class="btn btn-primary" (click)="saveTemplate.emit()">
@@ -10,6 +10,16 @@
     <button class="btn btn-secondary" (click)="exportTemplate.emit()">
       📥 Export Template
     </button>
+    <button class="btn btn-secondary" (click)="importTemplate.emit()">Bulk Import Product Details</button>
+<button 
+  class="btn btn-secondary" 
+  (click)="importTemplate.emit()" 
+  title="Bulk import product details as a spreadsheet">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align: middle;">
+    <path d="M10 2v10m0 0l-4-4m4 4l4-4M4 16h12" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
     <input
       type="text"
       [value]="templateName"
@@ -17,5 +27,54 @@
       placeholder="Template name..."
       class="template-name-input"
     />
+  </div>
+</div> -->
+
+<div class="header">
+  <h1>🎨 Template Creator - Angular</h1>
+  <div class="controls">
+    <div class="control-group">
+      <button class="btn btn-primary" (click)="saveTemplate.emit()">
+        💾 Save Template
+      </button>
+      <button class="btn btn-secondary" (click)="clearCanvas.emit()">
+        🗑️ Clear Canvas
+      </button>
+      <button class="btn btn-secondary" (click)="exportTemplate.emit()">
+        📥 Export Template
+      </button>
+
+      <input
+        type="text"
+        [value]="templateName"
+        (input)="templateNameChange.emit($any($event.target).value)"
+        placeholder="Template name..."
+        class="template-name-input"
+      />
+    </div>
+
+    <div class="icon-button">
+      <button
+        class="btn btn-primary"
+        (click)="importTemplate.emit()"
+        title="Bulk import product details as a spreadsheet"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          style="vertical-align: middle"
+        >
+          <path
+            d="M10 2v10m0 0l-4-4m4 4l4-4M4 16h12"
+            stroke="#333"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
